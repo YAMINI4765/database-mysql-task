@@ -1,7 +1,7 @@
 from config import db
 
 class DbPerson(db.Model):
-    __tablename__='employees'
+    __tablename__='employee'
     eno=db.Column(db.String(30),primary_key=True)
     name=db.Column(db.String(30),index=False,unique=False,nullable=False)
     city=db.Column(db.String(30),index=False,unique=False,nullable=False)

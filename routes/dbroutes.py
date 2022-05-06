@@ -2,14 +2,14 @@ from config import app,db
 from flask import jsonify,request,abort
 from models import DbPerson
 
-@app.route("/employees")
+@app.route("/employee")
 def getDbPeople():
     listp=DbPerson.query.all()
     result = [x.serialize() for x in listp]
     return jsonify(result)
 
 
-@app.route("/employees",methods=['POST'])
+@app.route("/employee",methods=['POST'])
 def processDepartments():
     try:
         input=request.get_json()
